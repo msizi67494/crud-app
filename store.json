@@ -1,0 +1,59 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "name": "8 New Rules of Money",
+      "rating": "3.1"
+    },
+    {
+      "id": "2",
+      "name": "Grutch of Grants",
+      "rating": "3.4"
+    },
+    {
+      "id": "3",
+      "name": "Braking Free",
+      "rating": "4.1"
+    },
+    {
+      "id": "4",
+      "name": "Unparalleled Truth",
+      "rating": "4.9"
+    },
+    {
+      "name": "msizi",
+      "rating": "3.4",
+      "id": "CHHoUjd"
+    },
+    {
+      "name": "Sakhile",
+      "rating": "3.5",
+      "id": "ZUQ4zwm"
+    },
+    {
+      "name": "Mpumelelo",
+      "rating": "5.0",
+      "id": "vL_xNq1"
+    },
+    {
+      "name": "Bengithi lizokuna",
+      "rating": "3.7",
+      "id": "r63CvlI"
+    },
+    {
+      "name": "new book",
+      "rating": "5.3",
+      "id": "HhxC614"
+    },
+    {
+      "name": "book",
+      "rating": "1.7",
+      "id": "_A5EBoq"
+    },
+    {
+      "name": "",
+      "rating": "",
+      "id": "8oUySrW"
+    }
+  ]
+}

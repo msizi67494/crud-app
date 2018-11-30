@@ -1,25 +1,59 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Button, Table } from 'reactstrap'
+import axios from 'axios'
+import Modalq from './components/Modal'
+
 
 class App extends Component {
+
+  state = {
+    books: [],
+  }
+
+
+  // method to get books from Api
+  async componentDidMount(){
+    let books = await axios.get(`http://localhost:3004/books`)
+    this.setState({books: books.data})
+  }
   render() {
+
+    // destructuring books from the state
+    const { books} = this.state
+
+    // display books from Api
+     let displayBooks = books.map((book) => (
+      <tr key={book.id}>
+        <td>{book.id}</td>
+        <td>{book.name}</td>
+        <td>{book.rating}</td> 
+        <td>
+          <Button className="mr-2" size="sm" color="success">Edit</Button>
+          <Button className="mr-2" size="sm" color="danger">Delete</Button>
+        </td>
+      </tr>
+    ))
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="App container">
+      {/* modal starts here */}
+      <Modalq books={this.state.books}/>
+
+        <Table striped>
+        {/* start of table head */}
+            <thead>
+              <th>#id</th>
+              <th>Book Name</th>
+              <th>Rating</th>
+              <th>Actions</th>
+            </thead> 
+
+            {/* start of table body */}
+          <tbody>
+             {displayBooks}
+          </tbody>
+          
+        </Table>
       </div>
     );
   }
