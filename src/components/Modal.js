@@ -24,7 +24,6 @@ export default class Modalq extends Component {
   addBook = () => {
     axios.post(`http://localhost:3004/books`, this.state.bookData)
     .then((response) => {
-        console.log(response)
 
         let newBooks = this.props.books
         newBooks.push(response)
