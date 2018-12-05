@@ -30,21 +30,21 @@ class App extends Component {
 
   // update book method
   updateBook = () => {
-    this.getData()
-    let { id, name, rating } = this.state.editBookData
-    axios.put(`http://localhost:3004/books/${id}`, { name, rating }).then( 
+    let { id, name, rating } = this.state.editBookData;
+   
+    axios.put(`http://localhost:3004/books/${id}`, { name, rating }).then( response =>
+    this.getData,
       this.setState({
-        editModal: !this.state.editModal
+        editModal: !this.state.editModal, editBookData: {id:'', name: '', rating: '' },
       })
     )
-    this.getData()
   }
 
   // deleting data from server
   deleteBook(id){
-console.log(id)
-    axios.delete(`http://localhost:3004/books/${id}`).then(response => console.log(`deleted`))
+    axios.delete(`http://localhost:3004/books/${id}`).then(response => 
     this.getData()
+    )
   } 
 
   // where the magic starts
@@ -54,7 +54,7 @@ console.log(id)
     const { books, editModal} = this.state
 
     // display books from Api
-    let displayBooks = books.map((book) => (
+    let displayBooks = books.map(book => (
                
       <tr key={book.id}>
         <td>{book.name}</td>

@@ -1,0 +1,29 @@
+{
+  "books": [
+    {
+      "name": "This is Me",
+      "rating": "3.8",
+      "id": "lENfEue"
+    },
+    {
+      "name": "8 New Rules of Money1",
+      "rating": "2.5",
+      "id": "uymzyOX"
+    },
+    {
+      "name": "Unparalleled Truth",
+      "rating": "3.98",
+      "id": "Hsve4mD"
+    }
+  ], 
+  "details": [
+    {
+      "id":"1",
+      "age":"22"
+    },
+    {
+      "id":"2",
+      "age":"24"
+    }
+  ]
+}

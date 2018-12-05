@@ -1,19 +1,14 @@
 {
   "books": [
     {
-      "name": "Caps",
-      "rating": "4.0",
-      "id": "8oUySrW"
+      "name": "8 new rules of money",
+      "rating": "2.1",
+      "id": 1
     },
     {
-      "name": "Sakhile Ndlela",
-      "rating": "4.3",
-      "id": "L4x8~R9"
-    },
-    {
-      "name": "This is Me",
-      "rating": "3.8",
-      "id": "lENfEue"
+      "name": "nothing but the truth ",
+      "rating": "8.9",
+      "id": 3
     }
   ]
 }
