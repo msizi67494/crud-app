@@ -21,31 +21,59 @@ class App extends Component {
     let books = await axios.get(`http://localhost:3004/books`)
     this.setState({books: books.data})
   }
-
-  updateBook = (id, name, rating) => {
+  // editing book method
+  editBook = (id, name, rating) => {
    this.setState({
      editBookData: {id, name, rating}, editModal: !this.state.editModal
    })
   }
+
+  // update book method
+  updateBook = () => {
+    this.getData()
+    let { id, name, rating } = this.state.editBookData
+    axios.put(`http://localhost:3004/books/${id}`, { name, rating }).then( 
+      this.setState({
+        editModal: !this.state.editModal
+      })
+    )
+    this.getData()
+  }
+
+  // deleting data from server
+  deleteBook(id){
+console.log(id)
+    axios.delete(`http://localhost:3004/books/${id}`).then(response => console.log(`deleted`))
+    this.getData()
+  } 
+
+  // where the magic starts
   render() {
 
     // destructuring books from the state
     const { books, editModal} = this.state
 
     // display books from Api
-
+    let displayBooks = books.map((book) => (
+               
+      <tr key={book.id}>
+        <td>{book.name}</td>
+        <td>{book.rating}</td> 
+        <td>
+          <Button className="mr-2" size="sm" color="success" onClick={() => this.editBook(book.id, book.name, book.rating )}>Edit</Button>
+          <Button className="mr-2" size="sm" color="danger" onClick={() => this.deleteBook(book.id)}>Delete</Button>
+        </td>
+      </tr>
+  ))
     return (
       <div className="App container">
       {/* modal starts here */}
       <Modalq books={this.state.books}/>
 
-
-
         <Table striped>
         {/* start of table head */}
             <thead>
               <tr>
-              <th>#id</th>
               <th>Book Name</th>
               <th>Rating</th>
               <th>Actions</th>
@@ -54,38 +82,39 @@ class App extends Component {
 
             {/* start of table body */}
           <tbody>
-             {books.map((book) => (
-               
-              <tr key={book.id}>
-                <td>{book.id}</td>
-                <td>{book.name}</td>
-                <td>{book.rating}</td> 
-                <td>
-                  <Button className="mr-2" size="sm" color="success" onClick={() => this.updateBook(book.id, book.name, book.rating )}>Edit</Button>
-                  <Button className="mr-2" size="sm" color="danger">Delete</Button>
-                </td>
-              </tr>
-          ))}
+             {displayBooks}
           </tbody>
         </Table>
-        <Modal isOpen={editModal} toggle={this.updateBook}>
-              <ModalHeader toggle={this.updateBook}>Edit Book</ModalHeader>
+        <Modal isOpen={editModal} toggle={this.editBook}>
+              <ModalHeader toggle={this.editBook}>Edit Book</ModalHeader>
               <ModalBody>
                   <FormGroup onSubmit={(e) => e.preventDefault()}>
                       <Input
                           placeholder="book name.." 
-                          className="mb-2" 
+                          className="mb-2"
+                          onChange={(e) => {
+                            const {editBookData} = this.state
+                            editBookData.name = e.target.value
+                            this.setState({editBookData})
+                        }
+                    }                           
                           value={this.state.editBookData.name} 
                       />
                       <Input 
                           placeholder="rating.."
+                          onChange={(e) => {
+                            const {editBookData} = this.state
+                            editBookData.rating = e.target.value
+                            this.setState({editBookData})
+                        }
+                    }                          
                           value={this.state.editBookData.rating}
                       />
                   </FormGroup>
               </ModalBody>
               <ModalFooter>
-                  <Button color="primary" onClick={() => this.updateBook()}>Update Book</Button>
-                  <Button color="secondary" onClick={this.updateBook}>Cancel</Button>
+                  <Button color="primary" onClick={this.updateBook}>Update Book</Button>
+                  <Button color="secondary" onClick={this.editBook}>Cancel</Button>
               </ModalFooter>
             </Modal>
       </div>
