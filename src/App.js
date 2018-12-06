@@ -33,10 +33,12 @@ class App extends Component {
     let { id, name, rating } = this.state.editBookData;
    
     axios.put(`http://localhost:3004/books/${id}`, { name, rating }).then( response =>
-    this.getData,
+    this.getData(),
       this.setState({
         editModal: !this.state.editModal, editBookData: {id:'', name: '', rating: '' },
-      })
+        
+      }),
+      this.getData()
     )
   }
 

@@ -16,34 +16,19 @@
       "id": 4
     },
     {
-      "name": "book1",
-      "rating": "1",
+      "name": "book12",
+      "rating": "1.6",
       "id": 5
     },
     {
       "name": "book2",
-      "rating": "2",
+      "rating": "2.5",
       "id": 6
     },
     {
       "name": "book3",
-      "rating": "3",
+      "rating": "3.5",
       "id": 7
-    },
-    {
-      "name": "book4",
-      "rating": "4",
-      "id": 8
-    },
-    {
-      "name": "book5",
-      "rating": "5",
-      "id": 9
-    },
-    {
-      "name": "book6",
-      "rating": "6",
-      "id": 10
     }
   ]
 }
