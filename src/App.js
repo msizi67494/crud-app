@@ -68,7 +68,7 @@ class App extends Component {
     return (
       <div className="App container">
       {/* modal starts here */}
-      <Modalq books={this.state.books}/>
+      <Modalq getData={this.getData} books={this.state.books}/>
 
         <Table striped>
         {/* start of table head */}

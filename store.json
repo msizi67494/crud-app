@@ -2,13 +2,48 @@
   "books": [
     {
       "name": "8 new rules of money",
-      "rating": "2.1",
+      "rating": "2.2",
       "id": 1
     },
     {
       "name": "nothing but the truth ",
       "rating": "8.9",
       "id": 3
+    },
+    {
+      "name": "New Book",
+      "rating": "3.7",
+      "id": 4
+    },
+    {
+      "name": "book1",
+      "rating": "1",
+      "id": 5
+    },
+    {
+      "name": "book2",
+      "rating": "2",
+      "id": 6
+    },
+    {
+      "name": "book3",
+      "rating": "3",
+      "id": 7
+    },
+    {
+      "name": "book4",
+      "rating": "4",
+      "id": 8
+    },
+    {
+      "name": "book5",
+      "rating": "5",
+      "id": 9
+    },
+    {
+      "name": "book6",
+      "rating": "6",
+      "id": 10
     }
   ]
 }

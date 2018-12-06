@@ -26,13 +26,17 @@ export default class Modalq extends Component {
     .then((response) => {
 
         let newBooks = this.props.books
-        newBooks.push(response)
+        newBooks.push(response.data)
     
         this.setState({newBooks, modal: !this.state.modal, bookData: {
             name: '',
-            rating:''
-        }})
+            rating:'',
+               },
+               
+        })
+        this.props.getData()
     }) 
+  
   }
 
   render() {
