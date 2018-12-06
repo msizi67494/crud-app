@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-server": "./node_modules/.bin/json-server --watch store.json --port 3004"
+    "start-server": "json-server --watch store.json --port 3004"
   },
   "eslintConfig": {
     "extends": "react-app"
