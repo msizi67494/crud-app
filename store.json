@@ -9,26 +9,6 @@
       "name": "nothing but the truth ",
       "rating": "8.9",
       "id": 3
-    },
-    {
-      "name": "New Book",
-      "rating": "3.7",
-      "id": 4
-    },
-    {
-      "name": "book12",
-      "rating": "1.6",
-      "id": 5
-    },
-    {
-      "name": "book2",
-      "rating": "2.5",
-      "id": 6
-    },
-    {
-      "name": "book3",
-      "rating": "3.5",
-      "id": 7
     }
   ]
 }

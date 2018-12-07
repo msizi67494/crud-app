@@ -88,37 +88,37 @@ class Crud extends Component {
           </tbody>
         </Table>
         <Modal isOpen={editModal} toggle={this.editBook}>
-              <ModalHeader toggle={this.editBook}>Edit Book</ModalHeader>
-              <ModalBody>
-                  <FormGroup onSubmit={(e) => e.preventDefault()}>
-                      <Input
-                          placeholder="book name.." 
-                          className="mb-2"
-                          onChange={(e) => {
-                            const {editBookData} = this.state
-                            editBookData.name = e.target.value
-                            this.setState({editBookData})
-                        }
-                    }                           
-                          value={this.state.editBookData.name} 
-                      />
-                      <Input 
-                          placeholder="rating.."
-                          onChange={(e) => {
-                            const {editBookData} = this.state
-                            editBookData.rating = e.target.value
-                            this.setState({editBookData})
-                        }
-                    }                          
-                          value={this.state.editBookData.rating}
-                      />
-                  </FormGroup>
-              </ModalBody>
-              <ModalFooter>
-                  <Button color="primary" onClick={this.updateBook}>Update Book</Button>
-                  <Button color="secondary" onClick={this.editBook}>Cancel</Button>
-              </ModalFooter>
-            </Modal>
+            <ModalHeader toggle={this.editBook}>Edit Book</ModalHeader>
+            <ModalBody>
+                <FormGroup onSubmit={(e) => e.preventDefault()}>
+                    <Input
+                        placeholder="book name.." 
+                        className="mb-2"
+                        onChange={(e) => {
+                          const {editBookData} = this.state
+                          editBookData.name = e.target.value
+                          this.setState({editBookData})
+                      }
+                  }                           
+                        value={this.state.editBookData.name} 
+                    />
+                    <Input 
+                        placeholder="rating.."
+                        onChange={(e) => {
+                          const {editBookData} = this.state
+                          editBookData.rating = e.target.value
+                          this.setState({editBookData})
+                      }
+                  }                          
+                        value={this.state.editBookData.rating}
+                    />
+                </FormGroup>
+            </ModalBody>
+            <ModalFooter>
+                <Button color="primary" onClick={this.updateBook}>Update Book</Button>
+                <Button color="secondary" onClick={this.editBook}>Cancel</Button>
+            </ModalFooter>
+          </Modal>
       </div>
     );
   }
