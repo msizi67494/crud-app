@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { Button, Table, Modal, ModalHeader, ModalBody, ModalFooter,FormGroup, Input  } from 'reactstrap'
 import axios from 'axios'
 import Modalq from './Modal'
+import IconButton from '@material-ui/core/IconButton'
+import DeleteIcon from '@material-ui/icons/Delete'
+import Icon from '@material-ui/core/Icon'
+
 
 class Crud extends Component {
   state = {
@@ -62,8 +66,8 @@ class Crud extends Component {
         <td>{book.name}</td>
         <td>{book.rating}</td> 
         <td>
-          <Button className="mr-2" size="sm" color="success" onClick={() => this.editBook(book.id, book.name, book.rating )}>Edit</Button>
-          <Button className="mr-2" size="sm" color="danger" onClick={() => this.deleteBook(book.id)}>Delete</Button>
+          <IconButton aria-label="Edit" onClick={() => this.editBook(book.id, book.name, book.rating )}><Icon fontSize="small">edit_icon</Icon></IconButton>
+          <IconButton aria-label="Delete" onClick={() => this.deleteBook(book.id)}><DeleteIcon fontSize="small" /></IconButton>
         </td>
       </tr>
   ))

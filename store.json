@@ -1,14 +1,9 @@
 {
   "books": [
     {
-      "name": "8 new rules of money",
-      "rating": "2.2",
+      "name": "8 New Rules of Money",
+      "rating": "5.0",
       "id": 1
-    },
-    {
-      "name": "nothing but the truth ",
-      "rating": "8.9",
-      "id": 3
     }
   ]
 }

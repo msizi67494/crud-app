@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,FormGroup, Input } from 'reactstrap'
 import axios from 'axios'
+import Fab from '@material-ui/core/Fab'
+import AddIcon from '@material-ui/icons/Add'
 
 export default class Modalq extends Component {
 
@@ -43,7 +45,8 @@ export default class Modalq extends Component {
       const { modal, bookData } = this.state
     return (
       <div>
-         <Button style={{margin: 20}} color="success" onClick={this.toggleModal}>Add Book</Button>
+        <Fab color="primary" size="small" aria-label="Add" style={{ margin: 20 }} onClick={this.toggleModal} ><AddIcon/></Fab>
+         {/* <Button  color="success" >Add Book</Button> */}
             <Modal isOpen={modal} toggle={this.toggleModal}>
                 <ModalHeader toggle={this.toggleModal}>Add New Book</ModalHeader>
                 <ModalBody>
