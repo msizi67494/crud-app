@@ -4,14 +4,14 @@ import { Paper } from '@material-ui/core'
 export default class Header extends Component {
   render() {
     return (
-      <Paper elevation="10"> 
-        <section class="hero is-medium is-primary is-bold">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title">
+      <Paper elevation={10}> 
+        <section className="hero is-medium is-primary is-bold">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">
                 Store your books with ease!
               </h1>
-              <h2 class="subtitle">
+              <h2 className="subtitle">
               easily add, update and delete your books with this easy to use app
               </h2>
             </div>

@@ -1,9 +1,24 @@
 {
   "books": [
     {
-      "name": "8 New Rules of Money",
-      "rating": "5.0",
+      "name": "The Great Gutchsby",
+      "rating": "5.9",
       "id": 1
+    },
+    {
+      "name": "Life as We live it",
+      "rating": "9.1",
+      "id": 2
+    },
+    {
+      "name": "you and Me",
+      "rating": "4.5",
+      "id": 3
+    },
+    {
+      "name": "unparalleled truth",
+      "rating": "7.4",
+      "id": 4
     }
   ]
 }

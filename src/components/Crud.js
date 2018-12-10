@@ -63,8 +63,8 @@ class Crud extends Component {
     let displayBooks = books.map(book => (
                
       <tr key={book.id}>
-        <td>{book.name}</td>
-        <td>{book.rating}</td> 
+        <td style={{verticalAlign: 'middle'}}>{book.name}</td>
+        <td style={{verticalAlign: 'middle'}}>{book.rating}</td> 
         <td>
           <IconButton aria-label="Edit" onClick={() => this.editBook(book.id, book.name, book.rating )}><Icon fontSize="small">edit_icon</Icon></IconButton>
           <IconButton aria-label="Delete" onClick={() => this.deleteBook(book.id)}><DeleteIcon fontSize="small" /></IconButton>
@@ -76,7 +76,7 @@ class Crud extends Component {
       {/* modal starts here */}
       <Modalq getData={this.getData} books={this.state.books}/>
 
-        <Table striped>
+        <Table size="sm">
         {/* start of table head */}
             <thead>
               <tr>
