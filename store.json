@@ -11,29 +11,24 @@
       "id": 2
     },
     {
-      "name": "you and Me",
-      "rating": "4.5",
-      "id": 3
-    },
-    {
       "name": "unparalleled truth",
       "rating": "7.4",
       "id": 4
     },
     {
-      "name": "new book",
-      "rating": "5.7",
-      "id": 5
-    },
-    {
-      "name": "book success",
-      "rating": "3.7",
-      "id": 6
-    },
-    {
-      "name": "sgsdfg",
-      "rating": "fgd",
+      "name": "Conspiracy",
+      "rating": "3.8",
       "id": 7
+    },
+    {
+      "name": "Success in Your Daily Routine",
+      "rating": "7.4",
+      "id": 8
+    },
+    {
+      "name": "Mpumelelo",
+      "rating": "6.4",
+      "id": 9
     }
   ]
 }

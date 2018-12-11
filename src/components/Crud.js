@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Table, Modal, ModalHeader, ModalBody, ModalFooter,FormGroup, Input  } from 'reactstrap'
+import { Snackbar, Fade } from '@material-ui/core'
 import axios from 'axios'
 import Modalq from './Modal'
 import IconButton from '@material-ui/core/IconButton'
@@ -14,8 +15,18 @@ class Crud extends Component {
       name:'',
       rating: ''
     },
-     editModal: false
+     editModal: false,
+     snackbarUpdateState: false,
+     snackbarDeleteState: false
   }
+  // snackbar Update toogle state
+  handleSnackbarToggle = () => {
+    this.setState({snackbarUpdateState: !this.state.snackbarUpdateState })
+}
+  // snackbar Update toogle state
+  handleSnackbarDeleteToggle = () => {
+    this.setState({snackbarUpdateState: !this.state.snackbarUpdateState })
+}
 
   componentDidMount(){
     this.getData()
@@ -44,6 +55,7 @@ class Crud extends Component {
       }),
       this.getData()
     )
+    this.handleSnackbarToggle()
   }
 
   // deleting data from server
@@ -51,6 +63,7 @@ class Crud extends Component {
     axios.delete(`http://localhost:3004/books/${id}`).then(response => 
     this.getData()
     )
+    this.handleSnackbarDeleteToggle()
   } 
 
   // where the magic starts
@@ -127,6 +140,20 @@ class Crud extends Component {
                 <Button color="secondary" onClick={this.editBook}>Cancel</Button>
             </ModalFooter>
           </Modal>
+          <Snackbar
+                open={this.state.snackbarUpdateState}
+                autoHideDuration={3000}
+                onClose={this.handleSnackbarToggle}
+                TransitionComponent={Fade}
+                message={<span id="message-id">Book Successfully Updated </span>}
+            />
+          <Snackbar
+                open={this.state.snackbarDeleteState}
+                autoHideDuration={3000}
+                onClose={this.handleSnackbarDeleteToggle}
+                TransitionComponent={Fade}
+                message={<span id="message-id">Book Successfully Deleted </span>}
+            />
       </div>
     );
   }
