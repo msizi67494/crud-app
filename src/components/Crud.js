@@ -6,7 +6,6 @@ import IconButton from '@material-ui/core/IconButton'
 import DeleteIcon from '@material-ui/icons/Delete'
 import Icon from '@material-ui/core/Icon'
 
-
 class Crud extends Component {
   state = {
     books: [],
@@ -14,7 +13,8 @@ class Crud extends Component {
       id:'',
       name:'',
       rating: ''
-    }, editModal: false
+    },
+     editModal: false
   }
 
   componentDidMount(){
@@ -67,14 +67,18 @@ class Crud extends Component {
         <td style={{verticalAlign: 'middle'}}>{book.rating}</td> 
         <td>
           <IconButton aria-label="Edit" onClick={() => this.editBook(book.id, book.name, book.rating )}><Icon fontSize="small">edit_icon</Icon></IconButton>
-          <IconButton aria-label="Delete" onClick={() => this.deleteBook(book.id)}><DeleteIcon fontSize="small" /></IconButton>
+          <IconButton aria-label="Delete" onClick={() =>  window.confirm("Are you sure you wish to delete this item?") && this.deleteBook(book.id)}><DeleteIcon fontSize="small" /></IconButton>
         </td>
       </tr>
   ))
     return (
       <div className="App container">
       {/* modal starts here */}
-      <Modalq getData={this.getData} books={this.state.books}/>
+      <Modalq 
+        getData={this.getData}
+        books={this.state.books}
+       
+      />
 
         <Table size="sm">
         {/* start of table head */}
