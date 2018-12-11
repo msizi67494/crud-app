@@ -1,11 +1,11 @@
 ## Project Introduction
-Project name: books
-Description: A simple a easy to use Web app for managing your books, the app allows you to add, update and delete books
-tools: React, Bootstrap, bulma, Material design, json-server
+Project name: books <br>
+Description: A simple a easy to use Web app for managing your books, the app allows you to add, update and delete books<br>
+tools: React, Bootstrap, bulma, Material design, json-server<br><br>
 
 
 ## Installation
-To run the app you need 3 things 
+To run the app you need 3 things <br>
 
  Install required node_modules <br>
  Start the server <br>
