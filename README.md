@@ -7,18 +7,18 @@ tools: React, Bootstrap, bulma, Material design, json-server
 ## Installation
 To run the app you need 3 things 
 
-1. Install required node_modules
-2. Start the server
-3. Run the app
+ Install required node_modules <br>
+ Start the server <br>
+ Run the app<br>
 
-1. Install required node_modules
-1.1 run `yarn install `
-1.2 run `yarn add json-server`
+1. Install required node_modules <br>
+1.1 run `yarn install ` <br>
+1.2 run `yarn add json-server` <br>
 
-2. Start the server
-2.1 run `yarn start-server`
+2. Start the server <br>
+2.1 run `yarn start-server`<br>
 
-3. Run the app
+3. Run the app <br>
 3.1 run ` yarn start `
 
 
