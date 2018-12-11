@@ -12,14 +12,14 @@ To run the app you need 3 things
 3. Run the app
 
 1. Install required node_modules
-1.1 run `yarn install / npm install `
-1.2 run `yarn add json-server / npm install install json-server `
+1.1 run `yarn install `
+1.2 run `yarn add json-server`
 
 2. Start the server
-2.1 run `yarn start-server / npm start-server`
+2.1 run `yarn start-server`
 
 3. Run the app
-3.1 run ` yarn start / npm start `
+3.1 run ` yarn start `
 
 
 
